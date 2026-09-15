@@ -1,3 +1,4 @@
+using FinanceApi.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinanceApi.Controllers;
@@ -15,7 +16,7 @@ public class AccountsController : ControllerBase
     [HttpGet("notfound")]
     public IActionResult GetNotFound()
     {
-        throw new KeyNotFoundException("The requested account was not found");
+        throw new NotFoundException("The requested account was not found");
     }
 
     [HttpGet("invalid")]
